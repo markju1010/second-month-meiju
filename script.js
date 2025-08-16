@@ -28,9 +28,17 @@ function showContent() {
   setInterval(createHeart, 500);
 
   // play music
-  music.play().catch(() => {
-    console.log("Autoplay blocked — user must interact first.");
-  });
+  const music = document.getElementById("bg-music");
+
+  function enableMusic() {
+    music.muted = false;
+    music.play();
+    document.removeEventListener("click", enableMusic);
+    document.removeEventListener("keydown", enableMusic);
+  }
+
+  document.addEventListener("click", enableMusic);
+  document.addEventListener("keydown", enableMusic);
 }
 
 function createHeart() {
