@@ -27,12 +27,12 @@ function showContent() {
   // start hearts
   setInterval(createHeart, 500);
 
-  // play music
-  const music = document.getElementById("bg-music");
-
+  // ✅ Play music after first interaction
   function enableMusic() {
     music.muted = false;
-    music.play();
+    music.play().catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
     document.removeEventListener("click", enableMusic);
     document.removeEventListener("keydown", enableMusic);
   }
@@ -55,9 +55,7 @@ function createHeart() {
 }
 
 function openSection(id) {
-  document
-    .querySelectorAll(".section")
-    .forEach((sec) => sec.classList.add("hidden"));
+  document.querySelectorAll(".section").forEach((sec) => sec.classList.add("hidden"));
   document.getElementById(id).classList.remove("hidden");
 }
 
@@ -74,11 +72,16 @@ function closeLetter() {
   document.getElementById("letterModal").style.display = "none";
 }
 
-// Close modal when clicking outside the box
+// Close modal when clicking outside
 window.onclick = function (event) {
   const modal = document.getElementById("letterModal");
+  const galleryModal = document.getElementById("galleryModal");
+  
   if (event.target === modal) {
     modal.style.display = "none";
+  }
+  if (event.target === galleryModal) {
+    closeGallery();
   }
 };
 
@@ -97,7 +100,7 @@ function closeGallery() {
 }
 
 function plusSlides(n) {
-  showSlides((slideIndex += n));
+  showSlides(slideIndex += n);
   resetAutoSlide();
 }
 
@@ -125,14 +128,6 @@ function resetAutoSlide() {
   clearInterval(slideTimer);
   startAutoSlide();
 }
-
-// Close when clicking outside
-window.onclick = function (event) {
-  const galleryModal = document.getElementById("galleryModal");
-  if (event.target === galleryModal) {
-    closeGallery();
-  }
-};
 
 function openFlowers() {
   document.getElementById("flowersModal").style.display = "flex";
