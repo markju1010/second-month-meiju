@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Monthsary ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Handwriting-style Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Intro Typing -->
+    <div class="intro">
+      <p id="typing-text"></p>
+    </div>
+
+    <!-- Main Content (hidden until intro finishes) -->
+    <div class="main-content hidden">
+      <div class="icons">
+        <img
+          src="icons/letter.png"
+          class="icon"
+          alt="Love Letter"
+          onclick="openLetter()"
+        />
+        <img
+          src="icons/gallery.png"
+          class="icon"
+          alt="Photo Gallery"
+          onclick="openGallery()"
+        />
+        <img
+          src="icons/flower.png"
+          class="icon"
+          alt="Virtual Flowers"
+          onclick="openFlowers()"
+        />
+      </div>
+    </div>
+
+    <!-- Letter Modal -->
+    <div id="letterModal" class="modal">
+      <div class="modal-content letter-box">
+        <span class="close" onclick="closeLetter()">&times;</span>
+        <h2 class="letter-title">hapi second mansari, bebe!!</h2>
+        <p class="letter-text">
+          hiii, memey! happy 2nd monthsary! 🍓 <br />
+          wow, grabe two months na tayo. gusto ko lang sabihin na mahal kita so
+          much! mahal na mahal kita! i'm so grateful to have you in this
+          lifetime. thank you for being my girlfriend! <br />
+          parang ang dami na nating pinagdaanan (like mga kalsada haha) ang saya
+          talaga maglakad kasama ka. lakad pa tayo ng marami babyy! don't forget
+          to smile, okay? and drink your water! <br />
+          I love you so much, memey!! 💗 <br />
+          – Juju 🐧
+        </p>
+      </div>
+    </div>
+
+    <div id="galleryModal" class="modal">
+      <div class="modal-content gallery-box">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <div class="slideshow-container">
+          <div class="slide fade">
+            <img src="gallery/photo1.png" alt="Memory 1" />
+            <div class="caption">free photobooth sa lappy 💓</div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo2.png" alt="Memory 2" />
+            <div class="caption">fries sa cafe guevara 🍟</div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo3.png" alt="Memory 3" />
+            <div class="caption">lomi after walk with loml 🍜</div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo4.png" alt="Memory 4" />
+            <div class="caption">
+              ang ganda ng flower pero mas maganda ka 🌸
+            </div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo5.png" alt="Memory 1" />
+            <div class="caption">bike!! 💕</div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo6.png" alt="Memory 2" />
+            <div class="caption">more bike!! 🚲</div>
+          </div>
+          <div class="slide fade">
+            <img src="gallery/photo7.png" alt="Memory 3" />
+            <div class="caption">i love you, memey!! 🍓</div>
+          </div>
+
+          <!-- Next/prev arrows -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="flowersModal" class="modal">
+      <div class="modal-content flower-box">
+        <span class="close" onclick="closeFlowers()">&times;</span>
+        <img src="gallery/flower.png" alt="Bouquet" class="bouquet-img" />
+        <p class="flower-message">For you, my love 💐</p>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+      <source src="/OneOnly.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,317 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: #fff0f5;
+  overflow-x: hidden;
+}
+
+/* Typing Text */
+#typing-text {
+  font-size: 1.5rem;
+  margin-top: 20vh;
+  white-space: pre-line;
+  color: #d63384;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.icon {
+  background: #ffb6c1;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.icon.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sections */
+.section {
+  margin-top: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Falling Hearts */
+.heart {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall linear forwards;
+  color: #ff4d6d;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Modal background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  animation: fadeIn 0.5s;
+}
+
+/* Modal content box */
+.modal-content {
+  background: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: popIn 0.5s;
+}
+
+/* Close button (X) */
+.close {
+  color: #888;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 3s; /* appears after typing */
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+/* Existing styles remain... */
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  animation: fadeIn 0.5s;
+  padding: 20px;
+}
+
+/* Letter-style modal content */
+.letter-box {
+  background: #fffdf5; /* soft cream paper background */
+  margin: 5% auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 85%;
+  max-width: 600px;
+  text-align: left;
+  font-family: 'Homemade Apple', cursive; /* handwriting font */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a2c2a;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: popIn 0.5s;
+  position: relative;
+}
+
+/* Title inside letter */
+.letter-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #d63384;
+}
+
+/* Letter text */
+.letter-text {
+  white-space: pre-line;
+}
+
+/* Close button (X) */
+.close {
+  color: #888;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e63946;
+}
+
+/* Gallery modal box */
+.gallery-box {
+  background: #fffdf5;
+  margin: 3% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+}
+
+/* Slideshow images */
+.slideshow-container img {
+  width: auto;
+  max-width: 100%;
+  max-height: 75vh; /* keeps full photo visible */
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Slides */
+.slide {
+  display: none;
+}
+
+.slide img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* soft floating shadow */
+}
+/* Caption */
+.caption {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+}
+
+/* Next & previous arrows */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 12px;
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 3px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.next {
+  right: 15px;
+}
+
+.prev {
+  left: 15px;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.2);
+  color: white;
+}
+
+/* Flower Modal */
+.flower-box {
+  background: #fffdf5; /* soft cream background */
+  margin: 5% auto;
+  padding: 50px 40px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  font-family: 'Caveat', cursive; /* handwriting font */
+  font-size: 1.3rem;
+  color: #e63946;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3); /* soft floating shadow */
+  position: relative;
+  animation: popIn 0.5s;
+}
+
+/* Flower Image inside modal */
+.flower-box img {
+  max-width: 60%;       /* scales image nicely */
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* Flower Message Text */
+.flower-message {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #e63946;
+  text-shadow: 2px 2px 4px white; /* white shadow for readability */
+  margin-top: 10px;
+}
+
+/* Close Button */
+.flower-box .close {
+  color: #888;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flower-box .close:hover {
+  color: #e63946;
+}
+
